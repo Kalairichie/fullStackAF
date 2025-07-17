@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
     "http://localhost:3000",
-    "https://homecinemain.com",
-    "https://acousticalfactory.onrender.com",
 ];
 
 app.use(
@@ -46,7 +44,7 @@ const seedDefaultUsers = async () => {
         { username: "ASI_Sales", password: "Welcome@123" },
         { username: "ASI_Estimation", password: "Welcome@123" },
         { username: "ASI_BDManager", password: "Welcome@123" },
-        { username: "ASI_CEO", password: "Welcome@123"},
+        { username: "ASI_CEO", password: "Welcome@123" },
     ]);
     console.log("✅ Default users (re)inserted");
 };
