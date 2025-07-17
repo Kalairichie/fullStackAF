@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  /* ✅ Prevents horizontal scroll */
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: url("./assets/WhatsApp Image 2025-06-11 at 17.43.54.jpeg")
+    no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.384);
+  /* Adjust opacity here */
+  z-index: -1;
+  /* Behind content */
+}
