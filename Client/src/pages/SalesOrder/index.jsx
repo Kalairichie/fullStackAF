@@ -7,7 +7,7 @@ import { setSalesOrder } from "../../store/provider/providerSlice";
 
 const SalesOrder = () => {
   const { salesOrder } = useSelector((state) => state.Provider);
-  const isAuthenticated = useSessionAuth("sales-order");
+  const isAuthenticated = useSessionAuth("salesOrder");
   const dispatch = useDispatch();
   const handleSalesOrderLogin = (data) => {
     if (!data) return;

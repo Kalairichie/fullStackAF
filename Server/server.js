@@ -41,44 +41,10 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Acoustical Factory API!");
 });
 
-// const seedDefaultUsers = async () => {
-//     await User.deleteMany({});
-//     await User.insertMany([
-//         { username: "ASI_Sales", password: "Welcome@123" },
-//         { username: "ASI_Estimation", password: "Welcome@123" },
-//         { username: "ASI_BDManager", password: "Welcome@123" },
-//         { username: "ASI_CEO", password: "Welcome@123" },
-//     ]);
-//     console.log("✅ Default users (re)inserted");
-// };
-const seedDefaultUsers = async () => {
-    await SalesUser.deleteMany({});
-    await EstimationUser.deleteMany({});
-    await SalesOrderUser.deleteMany({});
-    await ManagementUser.deleteMany({});
-
-    await SalesUser.insertMany([
-        { username: "ASI_Sales", password: "Welcome@123" }
-    ])
-
-    await EstimationUser.insertMany([
-        { username: "ASI_Estimation", password: "Welcome@123" }
-    ])
-
-    await SalesOrderUser.insertMany([
-        { username: "ASI_BDManager", password: "Welcome@123" }
-    ])
-
-    await ManagementUser.insertMany([
-        { username: "ASI_CEO", password: "Welcome@123" }
-    ])
-}
-
 mongoose
     .connect(process.env.MONGODB_URI)
     .then(async () => {
         console.log("MongoDB connected");
-        await seedDefaultUsers();
         app.listen(PORT, () => {
             console.log(`🚀 Server running on port ${PORT}`);
         });

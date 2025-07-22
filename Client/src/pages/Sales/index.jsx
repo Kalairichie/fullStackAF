@@ -17,7 +17,7 @@ function Sales() {
   };
   return (
     <>
-      {!sales?.success || isAuthenticated ? (
+      {sales?.success || isAuthenticated ? (
         <SalesForm />
       ) : (
         <Login
